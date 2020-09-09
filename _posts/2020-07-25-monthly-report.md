@@ -1,0 +1,56 @@
+---
+title: \[7월\] 월간 스터디 자료 기록
+tags: monthly
+author: 'Doyoung Gwak'
+---
+
+지난 한달간 진행했던 applicable-ml 스터디의 자료들을 공유합니다.
+저희 그룹은 앱에서의 ML 응용에 관심이 많은 스터디입니다. 사내에서 ML에 관심있는 iOS 개발자분들을 모셔왔고, 최근에는 에너지 넘치는 사외 엔지니어분도 합류하여 정기적인 모임을 진행하고 있습니다. 앱에서 ML을 활용할 때 필요한 것들을 공부하고, 만들고, 자랑하고, 서로 도와 프로젝트를 진행합니다.
+다들 항상 바쁘시지만 시간을 내서 아는 것을 공유해주시고 흥미롭게 들어주셔서 정말 재미있네요.
+현재는 앱개발자 위주로 스터디원이 구성되있어 iOS 관련 이야기(CoreML, Metal, Vision 등)가 많지만, 점점 ML 공부도하고 관심있는 모델러분도 모실 수 있으면 On-device ML 완전체가 될 수 있기를 기대합니다 🙂<br>
+<br>
+아래는 스터디에서 공유했던 자료와 프로젝트들입니다.<br>
+피드백, 코멘트는 언제나 환영이에요 😃
+
+## 📕 스터디 자료
+
+- 4주차
+  - [WWDC 2020 ML Recap(coremltools, Create ML)](https://bit.ly/2D4mKfk) - 곽도영
+  - [2D single person PoseNet 후처리의 모든것](https://bit.ly/39rcvOh) - 정현아
+- 3주차
+  - [Keras 학습 코드 리뷰 및 Grayscale에대해 잘못 알고 있던게 아닐까 (grayscale 전처리)](https://bit.ly/2BvBjsa) - 정상엽
+  - [Camera & Metal 기초](https://bit.ly/39nArlM) - 전은철
+  - [WWDC 2020 ML Recap(Core ML)](https://bit.ly/2D4mKfk) - 곽도영
+- 2주차
+  - [Keras와 fashion-mnist로 모델 학습 및 Core ML 모델 변환](https://bit.ly/2ZVIWBt) - 정현아
+  - [C3ML 사용법 공유](https://bit.ly/2ZWOlbG) - 전은철
+- 1주차
+  - 오프닝(스터디 방향, 규칙, 마음가짐) - 전체
+  - [Caffe 모델 → Core ML 모델 변환 가벼운 경험 공유](https://bit.ly/3jAs1MG) - 상엽님
+  - [Metal과 Core ML 호환성 이슈 공유](https://bit.ly/3eYnBLS) - 전은철
+  - [On-device ML 개발 프로세스와 앱개발자에게 YOLO 소개](https://bit.ly/3fWQauD) - 곽도영
+
+## 🧑‍💻 프로젝트 및 앱
+현재 동시다발적으로 진행되는 프로젝트 중에는 맥앱스토어 출시를 앞둔 앱부터(현재 리젝만 4번째 ㅎㅎ) 오픈소스 라이브러리까지 각자 관심 채널을 통해 작은 것부터 차근차근 응용을 실현해보고 있습니다.
+
+## 오픈소스
+- MetalCamera - 전은철
+- TFLiteSwift-Vision 오픈소스 프레임워크 제작 - 곽도영
+- PoseEstimation-TFLiteSwift - 곽도영
+
+## 서적
+- Core ML Survival Guide 책으로 스터디 - 정상엽 (and  ALL)
+
+## 개인 프로젝트
+- Capture&Paste 맥용 앱 제작 - 곽도영
+- 포즈 추론을 활용한 스쿼드 보조 앱 - 정현아
+- 딥러닝 모델 활용한 다양한 앱 기획들 - 전체
+
+## 후기
+
+- 코로나로인해 스터디를 온라인으로 진행하고 있는데 참여율이 저조하진 않을까 걱정했었지만, 괜한 걱정이었습니다 ㅎㅎ
+- 지난 한달동안 정기적인 모임이 유지되는지 확인해보는 기간을 가졌는데, 개인당 3-4주에 한번 발표 권장을 드렸지만 1-2주에 한번 발표를 해주시는 적극성까지!
+
+자료가 쌓이거나 흥미로운 결과가 나오면 한번씩 엮어서 공유해보도록 하겠습니다~
+혹시 스터디 주제범위에서 궁금한점이 있으면 편하게 문의해주세요~
+1인 1앱출시 가즈아ㅏㅏㅏㅏㅏ
