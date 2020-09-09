@@ -1,0 +1,13 @@
+# /_data/authors.yml
+
+Doyoung Gwak:
+  name        : "Doyoung Gwak"
+  bio         : "ML 응용에 관심이 많으며, 지속가능한 ML 응용 커뮤니티를 만들고 싶습니다. Applicable ML 커뮤니티에서 잡무를 담당하고 있습니다."
+  avatar      : "/assets/images/bio-photo-doyoung-1.jpg"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/tucan9389"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:tucan.dev@gmail.com"
