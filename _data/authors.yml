@@ -8,9 +8,6 @@
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/qelloman"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:tucan.dev@gmail.com"
 
   Jeonghyun Kang:
   name        : "Jeonghyun Kang"
@@ -54,8 +51,8 @@
       icon: "fas fa-fw fa-link"
       url: "http://syjdev.tistory.com"
 
-Eunchul Jeoun:
-  name        : "Eunchul Jeoun"
+Eunchul Jeon:
+  name        : "Eunchul Jeon"
   bio         : "iOS개발자입니다. 요즘 Metal, GPU를 이용한 속도개선, Vision 및 딥러닝에 대해 관심을 가지고 공부하고 있습니다."
   avatar      : "/assets/images/bio-eunchuljeun.jpg"
   links:
