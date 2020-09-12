@@ -1,5 +1,17 @@
 # /_data/authors.yml
 
+Doyoung Gwak:
+  name        : "Doyoung Gwak"
+  bio         : "ML 응용에 관심이 많으며, 지속가능한 ML 응용 커뮤니티를 만들고 싶습니다. Applicable ML 커뮤니티에서 잡무를 담당하고 있습니다."
+  avatar      : "/assets/images/bio-photo-doyoung-1.jpg"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/tucan9389"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:tucan.dev@gmail.com"
+      
 Doyun Kim:
   name        : "Doyun Kim"
   bio         : "현업으로 회로 설계를 하고 있지만 ML 꿈나무입니다. Edge device에서 하드웨어 혹은 소프트웨어로 어떻게 ML을 이용할 수 있는지에 관심이 많습니다."
@@ -9,17 +21,17 @@ Doyun Kim:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/qelloman"
 
-Jeonghyun Kang:
-  name        : "Jeonghyun Kang"
-  bio         : "가벼운 ML 모델을 만드는 것에서부터 이를 실제로 모바일로 서빙하는 것까지, 전부 들여다보려고 하고 있습니다!"
-  avatar      : "/assets/images/bio-jeonghyunkang.jpeg"
+Eunchul Jeon:
+  name        : "Eunchul Jeon"
+  bio         : "iOS개발자입니다. 요즘 Metal, GPU를 이용한 속도개선, Vision 및 딥러닝에 대해 관심을 가지고 공부하고 있습니다."
+  avatar      : "/assets/images/bio-eunchuljeun.jpg"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/arrow-straight"
+      url: "https://github.com/jsharp83"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:doyoudoudoyou@gmail.com"
+      url: "mailto:jsharp83@gmail.com"
 
 Hyunah Jeong:
   name        : "Hyunah Jeong"
@@ -36,6 +48,18 @@ Hyunah Jeong:
       icon: "fas fa-fw fa-link"
       url: "https://hyunable.github.io/"
 
+Jeonghyun Kang:
+  name        : "Jeonghyun Kang"
+  bio         : "가벼운 ML 모델을 만드는 것에서부터 이를 실제로 모바일로 서빙하는 것까지, 전부 들여다보려고 하고 있습니다!"
+  avatar      : "/assets/images/bio-jeonghyunkang.jpeg"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/arrow-straight"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:doyoudoudoyou@gmail.com"
+
 Sangyeop Jeong:
   name        : "Sangyeop Jeong"
   bio         : "개발에 대한 저의 흥미와 관심이, 고객의 문제를 풀 수 있기를 희망합니다."
@@ -50,27 +74,3 @@ Sangyeop Jeong:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "http://syjdev.tistory.com"
-
-Eunchul Jeon:
-  name        : "Eunchul Jeon"
-  bio         : "iOS개발자입니다. 요즘 Metal, GPU를 이용한 속도개선, Vision 및 딥러닝에 대해 관심을 가지고 공부하고 있습니다."
-  avatar      : "/assets/images/bio-eunchuljeun.jpg"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/jsharp83"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:jsharp83@gmail.com"
-
-Doyoung Gwak:
-  name        : "Doyoung Gwak"
-  bio         : "ML 응용에 관심이 많으며, 지속가능한 ML 응용 커뮤니티를 만들고 싶습니다. Applicable ML 커뮤니티에서 잡무를 담당하고 있습니다."
-  avatar      : "/assets/images/bio-photo-doyoung-1.jpg"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/tucan9389"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:tucan.dev@gmail.com"

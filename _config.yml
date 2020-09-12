@@ -294,3 +294,6 @@ paths:
   home    : /archive.html
   archive : 
   rss     : 
+
+collections:
+  authors:

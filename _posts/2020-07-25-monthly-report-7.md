@@ -1,6 +1,6 @@
 ---
 title: \[7월\] 월간 스터디 자료 기록
-tags: monthly
+tags: ['monthly', 'ml', 'metal', 'vision', 'coreml']
 author: 'Doyoung Gwak'
 ---
 
