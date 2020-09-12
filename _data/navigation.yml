@@ -2,8 +2,8 @@
 main:
   - title: "Members"
     url: /members/
-  # - title: "Tags"
-  #   url: /tags/
+  - title: "App Gallery"
+    url: /apps/
   # - title: "About"
   #   url: /about/
   # - title: "연도별 포스트"
