@@ -14,7 +14,7 @@ Doyoung Gwak:
 
 Chaddy:
   name        : "Chaddy (Season 2)"
-  bio         : "<TODO>"
+  bio         : "구슬이 서말이라도 꿰어야 보배라고 말하듯이, ML모델도 실용하지 않으면 쓸모 없다고 생각합니다. ML모델을 만드는 것에서 끝나는게 아니라 실용까지 할 수 있는 엔지니어가 되고 싶습니다."
   avatar      : "/assets/images/bio-chaddy.jpeg"
   links:
     - label: "GitHub"
@@ -38,7 +38,7 @@ Donghyun Kwak:
 
 Dongseok Yang:
   name        : "Dongseok Yang (Season 2)"
-  bio         : "Body/Hand Pose estimation과 딥런이 경량화에 관심이 많습니다. 좋은 인연을 만드는 것은 좋아합니다."
+  bio         : "Body/Hand Pose estimation과 딥러닝 경량화에 관심이 많습니다. 좋은 인연을 만드는 것은 좋아합니다."
   avatar      : "/assets/images/bio-dongseokyang.jpeg"
   links:
     - label: "GitHub"
