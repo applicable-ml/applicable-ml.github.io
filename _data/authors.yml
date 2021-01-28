@@ -11,7 +11,7 @@ Doyoung Gwak:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:tucan.dev@gmail.com"
-      
+
 Chaddy:
   name        : "Chaddy (Season 2)"
   bio         : "<TODO>"
@@ -86,8 +86,8 @@ Joonwon Lee:
 
 Sangbum Choi:
   name        : "Sangbum Choi (Season 2)"
-  bio         : "<TODO>"
-  avatar      : "/assets/images/<TODO>"
+  bio         : "돈이 되는 모바일 머신러닝을 하고 싶습니다"
+  avatar      : "/assets/images/bio-sangbumchoi.jpg"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -122,7 +122,7 @@ Seonghun Kim:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:kimsh777kr@gmail.com"
-      
+
 Sungwook Baek:
   name        : "Sungwook Baek (Season 2)"
   bio         : "<TODO>"
