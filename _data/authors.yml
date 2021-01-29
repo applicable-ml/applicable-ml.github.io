@@ -125,15 +125,18 @@ Seonghun Kim:
 
 Sungwook Baek:
   name        : "Sungwook Baek (Season 2)"
-  bio         : "<TODO>"
+  bio         : "ML을 통해 제가 상상했던 기능들을 만들어보고 싶습니다."
   avatar      : "/assets/images/bio-sungwookbaek.jpeg"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/SungwookBaek"
+      url: "https://github.com/shawnbaek"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:yoshiboarder@gmail.com"
+   - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://shawnbaek.com"
 
 Eunchul Jeon:
   name        : "Eunchul Jeon (Season 1)"
