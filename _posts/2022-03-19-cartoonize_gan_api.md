@@ -351,13 +351,15 @@ docker push public.ecr.aws/{your ecr id}/{your ecr repo name}:latest
     
     ```
     
-    <img src="https://user-images.githubusercontent.com/41981538/158799696-e2ebb85e-3f2a-4b33-a0e1-dbe999914191.png" alt="Untitled 3" style="zoom:50%;" />
+    
+    
+    <img src="https://user-images.githubusercontent.com/41981538/158799696-e2ebb85e-3f2a-4b33-a0e1-dbe999914191.png" width=700px height=200px>
 
 
 
 설정을 완료하면, 아래와 같은 화면이 뜨면서, 해당 API 가 올라가는 것을 볼 수 있음.
 
-![스크린샷_2022-02-13_오전_2 04 22](https://user-images.githubusercontent.com/41981538/158799681-7406e133-57e5-40d7-8c7c-3a3a0b009e23.jpg)
+<img src="https://user-images.githubusercontent.com/41981538/158799681-7406e133-57e5-40d7-8c7c-3a3a0b009e23.jpg" width=700px height=125px>
 
 
 
