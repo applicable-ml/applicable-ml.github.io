@@ -56,10 +56,9 @@ GPU 환경의 배포는 개인 프로젝트의 비용 문제로 고려하지 않
 이 글을 읽는 독자분의 모델(학습한 모델 혹은 학습된 모델)이 있다고 가정합니다
 > 
 
-![스크린샷_2022-03-17_오후_8 14 50](https://user-images.githubusercontent.com/41981538/158799688-3846cb91-f789-4f80-9291-dd815f3cefc8.jpg)
+<img src="https://user-images.githubusercontent.com/41981538/158799688-3846cb91-f789-4f80-9291-dd815f3cefc8.jpg" alt="스크린샷_2022-03-17_오후_8 14 50" style="zoom: 50%;" />
 
 > [https://blog.jaysinha.me/content/images/size/w2000/2021/03/cyclegan.png](https://blog.jaysinha.me/content/images/size/w2000/2021/03/cyclegan.png)
-> 
 
 저의 경우, `CycleGAN` 을 활용하여, 학습을 진행하였습니다. 
 
@@ -97,7 +96,7 @@ GPU 환경의 배포는 개인 프로젝트의 비용 문제로 고려하지 않
 - 해당 설정을 하지 않을 경우, `Inference` 결과가 전혀 예상하지 못하게 나오는 것을 확인할 수 있습니다.
 
 ```python
-self.mode
+self.model = JitCycleGanModel()
 self.model.eval()
 ```
 
@@ -191,7 +190,7 @@ model = torch.jit.load(self.jit_path)
 
 ## AWS EB 를 활용해서, API 배포하기
 
-![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-01-12_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8 10 48](https://user-images.githubusercontent.com/41981538/158799679-a5e7265c-93d6-4a52-af77-a02699fb211b.jpg)
+<img src="https://user-images.githubusercontent.com/41981538/158799679-a5e7265c-93d6-4a52-af77-a02699fb211b.jpg" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-01-12_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8 10 48" style="zoom:67%;" />
 
 **EB (Elastic Beanstalk) 를 사용하는 이유**
 
@@ -238,11 +237,11 @@ docker push public.ecr.aws/{your ecr id}/{your ecr repo name}:latest
 
 - 환경 티어 - 웹 서버 환경 생성.
   
-    ![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-01-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 16 39](https://user-images.githubusercontent.com/41981538/158799655-de920919-bbf5-4b95-b63f-ff93ad43c05d.jpg)
+    <img src="https://user-images.githubusercontent.com/41981538/158799655-de920919-bbf5-4b95-b63f-ff93ad43c05d.jpg" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-01-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 16 39" style="zoom:25%;" />
     
 - 플랫폼 - Docker 으로 설정
   
-    ![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-01-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 16 57](https://user-images.githubusercontent.com/41981538/158799668-1b27d325-872b-4135-80f9-ed58836b9f85.jpg)
+    <img src="https://user-images.githubusercontent.com/41981538/158799668-1b27d325-872b-4135-80f9-ed58836b9f85.jpg" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-01-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 16 57" style="zoom:25%;" />
     
 - 환경 구성 - 프리티어를 사용해서 진행.
   
@@ -254,7 +253,7 @@ docker push public.ecr.aws/{your ecr id}/{your ecr repo name}:latest
   
     ![스크린샷_2022-02-13_오전_1 43 12](https://user-images.githubusercontent.com/41981538/158799680-b2d904f2-c4e3-4dc7-b967-4a613fd5f0e6.jpg)
     
-    ![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-01-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 30 22](https://user-images.githubusercontent.com/41981538/158799677-220fb789-714e-488d-8282-151145c413ab.jpg)
+    <img src="https://user-images.githubusercontent.com/41981538/158799677-220fb789-714e-488d-8282-151145c413ab.jpg" alt="%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-01-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11 30 22" style="zoom:50%;" />
     
 - 애플리케이션 코드 - `[Dockerrun.aws.json](https://github.com/heojae/CartoonizedGanAPI/blob/main/Dockerrun.aws.json)` 을 통해서, 관리.
   
@@ -280,8 +279,7 @@ docker push public.ecr.aws/{your ecr id}/{your ecr repo name}:latest
     
     ```
     
-    ![Untitled 3](https://user-images.githubusercontent.com/41981538/158799696-e2ebb85e-3f2a-4b33-a0e1-dbe999914191.png)
-    
+    <img src="https://user-images.githubusercontent.com/41981538/158799696-e2ebb85e-3f2a-4b33-a0e1-dbe999914191.png" alt="Untitled 3" style="zoom:50%;" />
 
 설정을 완료하면, 아래와 같은 화면이 뜨면서, 해당 API 가 올라가는 것을 볼 수 있음.
 
@@ -312,7 +310,7 @@ print("평균 : ", sum(req_times)/all_count)**
 
 ```
 
-![Untitled](https://user-images.githubusercontent.com/41981538/158799697-a89595f8-c728-451d-b18b-bb78f582d7d8.png)
+<img src="https://user-images.githubusercontent.com/41981538/158799697-a89595f8-c728-451d-b18b-bb78f582d7d8.png" alt="Untitled" style="zoom:50%;" />
 
 ### 결과
 
