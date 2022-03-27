@@ -5,13 +5,10 @@ author: "Jae Heo"
 ---
 
 
-# 학습한 모델 API로 만들고 배포하기.
+<img width="534" alt="image" src="https://user-images.githubusercontent.com/37643248/160263836-3f303b49-3579-4c19-9f57-17ea2c0e4692.png">
 
-![KakaoTalk_Photo_2021-10-24-12-31-54_real_A](https://user-images.githubusercontent.com/41981538/158799690-5fc0ad03-4ba3-4d94-b8e5-473f1daca63a.png)
 
-![KakaoTalk_Photo_2021-10-24-12-31-54_fake_A](https://user-images.githubusercontent.com/41981538/158799689-ffd12f78-dd88-49d9-b79e-de6526a16a6f.png)
-
-<img src="https://user-images.githubusercontent.com/41981538/158799697-a89595f8-c728-451d-b18b-bb78f582d7d8.png" width=700px height=400px>
+<img src="https://user-images.githubusercontent.com/41981538/158799697-a89595f8-c728-451d-b18b-bb78f582d7d8.png" width=700px>
 
 목표 독자 : 
 
@@ -25,9 +22,8 @@ author: "Jae Heo"
 
 이 프로젝트는 `CycleGAN`을 활용하여 현실의 사진을 웹툰 그림으로 `StyleTransfer` 하는 프로젝트입니다.
 
-![스크린샷_2022-02-13_오전_12 14 03](https://user-images.githubusercontent.com/41981538/158799686-5ec6b57b-dfc5-489f-b9fa-dc25bbd435ac.jpg)
+<img width="456" alt="Screen Shot 2022-03-27 at 11 19 29 AM" src="https://user-images.githubusercontent.com/37643248/160263851-9763ac81-c886-4b81-b175-bf29d120bfe2.png">
 
-![스크린샷_2022-02-13_오전_12 13 56](https://user-images.githubusercontent.com/41981538/158799682-26c4d2cb-641f-4ecf-b775-922bb399dadf.jpg)
 
 현실 이미지를 만화로 만드는 리서치가 재미있었고, 
 **‘이 모델들을 언젠가 서비스화 해보고 싶다’** 라고 생각했었습니다. 
@@ -81,16 +77,12 @@ GPU 환경의 배포는 개인 프로젝트의 비용 문제로 고려하지 않
 
 ### 작업한 부분
 
-- 원본 Repo 를 기반으로, `CycleGAN` 을 활용하여 학습함.
-
+- 원본 Repo 를 기반으로, `CycleGAN` 을 활용하여 학습하였습니다.
 - Cycle Gan 을 통해서 학습되는 4가지 Model weight 중에서
     - 웹툰 Domain → 현실 Domain  :  Generator, Discriminator
     - 현실 Domain → 웹툰 Domain  :  Generator, Discriminator
-      
         `현실 → 웹툰 Generator` 부분에 필요한 코드와 학습된 weight 만 빼내어 추출함.
-    
 - JIT 로 Model 을 Exporting 함.
-
 - Inference Time 비교.
 
 
@@ -103,7 +95,6 @@ GPU 환경의 배포는 개인 프로젝트의 비용 문제로 고려하지 않
 
 > 학습이 완료된, 모델을 API 로 변경할 때, 고려해야하는 사항들.
 (경험을 기반으로 적어 보았습니다.)
-> 
 
 아래 레포에 Flask 로 예제가 구현되어 있으며, 참고 부탁드립니다 🙏
 
@@ -124,7 +115,7 @@ self.model = JitCycleGanModel()
 self.model.eval()
 ```
 
-참고자료
+### 참고자료
 
 - [https://discuss.pytorch.org/t/model-eval-vs-with-torch-no-grad/19615](https://discuss.pytorch.org/t/model-eval-vs-with-torch-no-grad/19615)
 - [https://blog.paperspace.com/pytorch-101-building-neural-networks/](https://blog.paperspace.com/pytorch-101-building-neural-networks/)
@@ -146,7 +137,7 @@ with torch.no_grad():
 
 ```
 
-참고자료
+### 참고자료
 
 - [https://github.com/heojae/FoodImageRotationAdmin/issues/33](https://github.com/heojae/FoodImageRotationAdmin/issues/33)
 - [https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/](https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/)
@@ -170,7 +161,7 @@ with torch.no_grad():
     - [https://discuss.pytorch.org/t/can-pytorch-by-pass-python-gil/55498/2](https://discuss.pytorch.org/t/can-pytorch-by-pass-python-gil/55498/2)
 - [gunicorn 공식 문서](https://docs.gunicorn.org/en/stable/settings.html#worker-class)
 
-> `[Locust](https://locust.io/)` 를 사용해서 부하테스트를 하여, 어떤 설정이 제일 최적인지 확인하는 과정이 있으면 좋습니다.
+> [Locust](https://locust.io/)를 사용해서 부하테스트를 하여, 어떤 설정이 제일 최적인지 확인하는 과정이 있으면 좋습니다.
 
 
 - 개인적으로 CPU 만을 사용하는 API 에서는 `Gthread` 를 활용해서 구현하는 것을 추천.
@@ -248,7 +239,7 @@ model = torch.jit.load(self.jit_path)
 
 
 
-**EB (Elastic Beanstalk) 를 사용하는 이유**
+### EB (Elastic Beanstalk) 를 사용하는 이유
 
 - MLOps 관점에서 [k8s](https://kubernetes.io/ko/)를 직접 구성해서 사용할수도 있으나, 
 부족한 리소스 안에서 방대한 [k8s](https://kubernetes.io/ko/)를 공부하고 구축하고 효율적으로 적용은  현실적으로 쉽지 않을수 있음
@@ -296,7 +287,7 @@ docker push public.ecr.aws/{your ecr id}/{your ecr repo name}:latest
 
 
 
-참고자료
+### 참고 링크
 
 - [https://docs.aws.amazon.com/ko_kr/AmazonECR/latest/userguide/docker-push-ecr-image.html](https://docs.aws.amazon.com/ko_kr/AmazonECR/latest/userguide/docker-push-ecr-image.html)
 - [https://aws.amazon.com/ko/ecr/pricing/](https://aws.amazon.com/ko/ecr/pricing/)
@@ -305,29 +296,18 @@ docker push public.ecr.aws/{your ecr id}/{your ecr repo name}:latest
 
 
 
-### 3. EB 에 배포하기. (실험 포함)
+### 3. EB 에 배포하기 (실험 포함)
 
-- 환경 티어 - 웹 서버 환경 생성.
-  
-    <img src="https://user-images.githubusercontent.com/41981538/158799655-de920919-bbf5-4b95-b63f-ff93ad43c05d.jpg" width=500px height=200px>
-    
-- 플랫폼 - Docker 으로 설정
-  
-    <img src="https://user-images.githubusercontent.com/41981538/158799668-1b27d325-872b-4135-80f9-ed58836b9f85.jpg" width=500px height=200px>
-    
-- 환경 구성 - 프리티어를 사용해서 진행.
-  
-    <img src="https://user-images.githubusercontent.com/41981538/158799680-b2d904f2-c4e3-4dc7-b967-4a613fd5f0e6.jpg" width=500px height=200px>
-    
-    
-    
-- 환경 구성 - 추후 비용을 들여서 배포가 필요로 할 경우에는, 고가용성을 설정하여, 로드 밸런서 기능을 추가할 필요가 있음.
-  
-    ![스크린샷_2022-02-13_오전_1 43 12](https://user-images.githubusercontent.com/41981538/158799680-b2d904f2-c4e3-4dc7-b967-4a613fd5f0e6.jpg)
-    
-    <img src="https://user-images.githubusercontent.com/41981538/158799677-220fb789-714e-488d-8282-151145c413ab.jpg" width=500px height=700px>
-    
-- 애플리케이션 코드 - `[Dockerrun.aws.json](https://github.com/heojae/CartoonizedGanAPI/blob/main/Dockerrun.aws.json)` 을 통해서, 관리.
+- 환경 티어 - 웹 서버 환경 생성<br>
+    <img src="https://user-images.githubusercontent.com/41981538/158799655-de920919-bbf5-4b95-b63f-ff93ad43c05d.jpg" width=500px>
+- 플랫폼 - Docker 으로 설정<br>
+    <img src="https://user-images.githubusercontent.com/41981538/158799668-1b27d325-872b-4135-80f9-ed58836b9f85.jpg" width=500px>
+- 환경 구성 - 프리티어를 사용해서 진행<br>
+    <img src="https://user-images.githubusercontent.com/41981538/158799680-b2d904f2-c4e3-4dc7-b967-4a613fd5f0e6.jpg" width=500px>
+- 환경 구성 - 추후 비용을 들여서 배포가 필요로 할 경우에는, 고가용성을 설정하여, 로드 밸런서 기능을 추가할 필요가 있음<br>
+    <img src="https://user-images.githubusercontent.com/41981538/158799680-b2d904f2-c4e3-4dc7-b967-4a613fd5f0e6.jpg" width=500px><br>
+    <img src="https://user-images.githubusercontent.com/41981538/158799677-220fb789-714e-488d-8282-151145c413ab.jpg" width=500px>
+- 애플리케이션 코드 - [`Dockerrun.aws.json`](https://github.com/heojae/CartoonizedGanAPI/blob/main/Dockerrun.aws.json)을 통해서, 관리
   
     ```json
     # Dockerrun.aws.json
@@ -356,16 +336,15 @@ docker push public.ecr.aws/{your ecr id}/{your ecr repo name}:latest
     <img src="https://user-images.githubusercontent.com/41981538/158799696-e2ebb85e-3f2a-4b33-a0e1-dbe999914191.png" width=700px height=200px>
 
 
-
-설정을 완료하면, 아래와 같은 화면이 뜨면서, 해당 API 가 올라가는 것을 볼 수 있음.
+설정을 완료하면, 아래와 같은 화면이 나타나며 해당 API 가 올라가는 것을 볼 수 있습니다.
 
 <img src="https://user-images.githubusercontent.com/41981538/158799681-7406e133-57e5-40d7-8c7c-3a3a0b009e23.jpg" width=700px height=125px>
 
 
 
-**부하 테스트 실험 내용.**
+### 부하 테스트 실험
 
-아래 파일을 로컬에서 파이썬으로 실행시켜서, EB 로 Request 로 보냄.
+아래 파일을 로컬에서 파이썬으로 실행시켜서, EB로 Request 로 보냈습니다.
 
 ```python
 import requests
@@ -385,7 +364,6 @@ for i in range(all_count):
     req_times.append(end_time - start_time)
 
 print("평균 : ", sum(req_times)/all_count)**
-
 ```
 
 
@@ -398,27 +376,25 @@ print("평균 : ", sum(req_times)/all_count)**
 
 ### 결과
 
-200개 의 Request 를 동시에 각각 보냄.
+200개 의 Request를 동시에 각각 보냈습니다.
 
-- 1 개 client → 평균 : 1.82s
-- 2개 client → 평균 : 3.64s
+- client 1개 → 평균 : 1.82s
+- client 2개 → 평균 : 3.64s
 
-`[t2.micro](https://aws.amazon.com/ko/ec2/instance-types/t2/)` 와 같이 CPU 성능이 높지 않은 곳에서 딥러닝 모델을 돌리는 것이 좋지 않은 결과를 나타낸다는 것을 알고 있었으나, 
-이정도 Request 밖에 되지 않는데 `CPU 사용률` 그래프를 보니 안타까움.
+[t2.micro](https://aws.amazon.com/ko/ec2/instance-types/t2/)와 같이 CPU 성능이 높지 않은 곳에서 딥러닝 모델을 돌리는 것이 좋지 않은 결과를 나타낸다는 것을 알고 있었으나, 이정도 Request 밖에 되지 않는데 `CPU 사용률` 그래프를 보니 안타깝습니다.
 
-해결방법
+#### 해결방법
 
-사실 아래 2개를 하면 되는 일이긴 하고, EB 에서 원래 지원해주는 기능이기에 별일은 아님.
+사실 아래 2개를 하면 되는 일이긴 하고, EB 에서 원래 지원해주는 기능이기에 별일은 아닙니다.
 
-- EC2 인스턴스 설정에서 부터, CPU 가 좋은 인스턴스를 활용.
-- Load Balancing 을 활용하여, 여러 인스턴스를 올림.
-- 참조 링크
-    - [https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/create_deploy_docker.html](https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/create_deploy_docker.html)
-    - [https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/single-container-docker-configuration.html](https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/single-container-docker-configuration.html)
-    - [https://medium.com/devops-with-valentine/how-to-deploy-a-docker-container-to-aws-elastic-beanstalk-using-aws-cli-87ccef0d5189](https://medium.com/devops-with-valentine/how-to-deploy-a-docker-container-to-aws-elastic-beanstalk-using-aws-cli-87ccef0d5189)
+- EC2 인스턴스 설정에서 부터, CPU가 좋은 인스턴스를 활용
+- Load Balancing 을 활용하여, 여러 인스턴스를 올림
 
+#### 참조 링크
 
-
+- [https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/create_deploy_docker.html](https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/create_deploy_docker.html)
+- [https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/single-container-docker-configuration.html](https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/single-container-docker-configuration.html)
+- [https://medium.com/devops-with-valentine/how-to-deploy-a-docker-container-to-aws-elastic-beanstalk-using-aws-cli-87ccef0d5189](https://medium.com/devops-with-valentine/how-to-deploy-a-docker-container-to-aws-elastic-beanstalk-using-aws-cli-87ccef0d5189)
 
 
 
