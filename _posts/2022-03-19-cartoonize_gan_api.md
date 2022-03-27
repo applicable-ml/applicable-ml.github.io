@@ -11,15 +11,13 @@ author: "Jae Heo"
 
 목표 독자 : 
 
-- 딥러닝과 Backend 에 대해서, 어느정도 알지만 모델을 API 화하여, 배포하는 방법에 대해 잘 모르시는 분.
+- 딥러닝과 Backend 에 대해서 어느정도 알지만 모델을 API 화하여, 배포하는 방법에 대해 잘 모르시는 분.
 
 
 
 ### Intro
 
-예전에 `CartoonizeGAN` 이라는 프로젝트를 진행한 적이 있었습니다. 
-
-이 프로젝트는 `CycleGAN`을 활용하여 현실의 사진을 웹툰 그림으로 `StyleTransfer` 하는 프로젝트입니다.
+예전에 CartoonizeGAN 이라는 프로젝트를 진행한 적이 있었습니다. 이 프로젝트는 [CycleGAN](https://arxiv.org/abs/1703.10593)을 활용하여 현실의 사진을 웹툰 그림으로 `StyleTransfer` 하는 프로젝트입니다.
 
 <img width="456" alt="Screen Shot 2022-03-27 at 11 19 29 AM" src="https://user-images.githubusercontent.com/37643248/160263851-9763ac81-c886-4b81-b175-bf29d120bfe2.png">
 
@@ -27,28 +25,21 @@ author: "Jae Heo"
 현실 이미지를 만화로 만드는 리서치가 재미있었고, 
 **‘이 모델들을 언젠가 서비스화 해보고 싶다’** 라고 생각했었습니다. 
 
-
-
 그래서, 이번 기회에 Cartoonize Gan 프로젝트에 대해서 API 화하는 작업을 진행하게 되었습니다. 
 
 1. 모델링 
 2. API 제작
 3. 배포
 
-
-
 이 과정에서 필요했던 내용들을 모아 공유드리고 싶습니다.
 
 > API를 만들어 CPU 환경에 배포하는 내용을 다룹니다. 
 GPU 환경의 배포는 개인 프로젝트의 비용 문제로 고려하지 않았습니다.
 
-
-
-관련 구현 저장소
+구현 저장소
 
 - [https://github.com/heojae/CartoonizedGanExport](https://github.com/heojae/CartoonizedGanExport)
 - [https://github.com/heojae/CartoonizedGanAPI](https://github.com/heojae/CartoonizedGanAPI)
-
 
 ---
 
@@ -77,7 +68,6 @@ GPU 환경의 배포는 개인 프로젝트의 비용 문제로 고려하지 않
         `현실 → 웹툰 Generator` 부분에 필요한 코드와 학습된 weight 만 빼내어 추출함.
 - JIT 로 Model 을 Exporting 함.
 - Inference Time 비교.
-
 
 ---
 
