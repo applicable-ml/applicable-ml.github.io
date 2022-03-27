@@ -1,9 +1,8 @@
 ---
 title: 학습한 모델 API로 만들고 배포하기
-tags: ['cartoonize', 'api', 'model']
+tags: ['cartoonize', 'api', 'model', 'aws', 'es', 'model-serving', 'deployment']
 author: "Jae Heo"
 ---
-
 
 <img width="534" alt="image" src="https://user-images.githubusercontent.com/37643248/160263836-3f303b49-3579-4c19-9f57-17ea2c0e4692.png">
 
@@ -42,17 +41,13 @@ author: "Jae Heo"
 
 > API를 만들어 CPU 환경에 배포하는 내용을 다룹니다. 
 GPU 환경의 배포는 개인 프로젝트의 비용 문제로 고려하지 않았습니다.
-> 
 
 
 
-관련 구현 레포
+관련 구현 저장소
 
 - [https://github.com/heojae/CartoonizedGanExport](https://github.com/heojae/CartoonizedGanExport)
 - [https://github.com/heojae/CartoonizedGanAPI](https://github.com/heojae/CartoonizedGanAPI)
-
-
-
 
 
 ---
@@ -73,9 +68,7 @@ GPU 환경의 배포는 개인 프로젝트의 비용 문제로 고려하지 않
 - 원본 Repo → [https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
 - 학습 결과 저장되어 있는 Repo → [https://github.com/heojae/CartoonizedGanExport](https://github.com/heojae/CartoonizedGanExport)
 
-
-
-### 작업한 부분
+### 작업 내용
 
 - 원본 Repo 를 기반으로, `CycleGAN` 을 활용하여 학습하였습니다.
 - Cycle Gan 을 통해서 학습되는 4가지 Model weight 중에서
@@ -84,9 +77,6 @@ GPU 환경의 배포는 개인 프로젝트의 비용 문제로 고려하지 않
         `현실 → 웹툰 Generator` 부분에 필요한 코드와 학습된 weight 만 빼내어 추출함.
 - JIT 로 Model 을 Exporting 함.
 - Inference Time 비교.
-
-
-
 
 
 ---
@@ -101,9 +91,6 @@ GPU 환경의 배포는 개인 프로젝트의 비용 문제로 고려하지 않
 [https://github.com/heojae/CartoonizedGanAPI](https://github.com/heojae/CartoonizedGanAPI)
 
 
-
-
-
 ### 1. Model Eval 모드로 변경하기 (Pytorch)
 
 > `model.eval()` will notify all your layers that you are in eval mode, that way, batchnorm or dropout layers will work in eval mode instead of training mode.
@@ -114,16 +101,6 @@ GPU 환경의 배포는 개인 프로젝트의 비용 문제로 고려하지 않
 self.model = JitCycleGanModel()
 self.model.eval()
 ```
-
-### 참고자료
-
-- [https://discuss.pytorch.org/t/model-eval-vs-with-torch-no-grad/19615](https://discuss.pytorch.org/t/model-eval-vs-with-torch-no-grad/19615)
-- [https://blog.paperspace.com/pytorch-101-building-neural-networks/](https://blog.paperspace.com/pytorch-101-building-neural-networks/)
-- [https://github.com/heojae/FoodImageRotationAdmin/issues/27#issue-806993680](https://github.com/heojae/FoodImageRotationAdmin/issues/27#issue-806993680)
-
-
-
-
 
 ### 2. no grad() 설정하기. (Pytorch)
 
@@ -137,21 +114,10 @@ with torch.no_grad():
 
 ```
 
-### 참고자료
-
-- [https://github.com/heojae/FoodImageRotationAdmin/issues/33](https://github.com/heojae/FoodImageRotationAdmin/issues/33)
-- [https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/](https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/)
-
-
-
-
-
 ### 3. [Gunicorn](https://docs.gunicorn.org/en/stable/) 설정 정하기 (WSGI)
 
 > python 계열의 서버들은 Gunicorn 이 WSGI 로서 제공되는 경우가 많고, Gunicorn 또한 간편한 설정을 통해서, 다양한 Type 으로 실행을 할 수 있습니다.
 그렇기에, Gunicorn 의 문서를 제대로 읽고, 현재 상황에 가장 적합한 설정을 정하는 것이 중요합니다.
-> 
-
 
 
 해당 부분을 고려하기 위해서는 아래 2가지를 미리 알아두면 선택의 길이 넒어집니다.
@@ -172,17 +138,11 @@ with torch.no_grad():
 gunicorn -k gthread --workers=2 --threads=4 --bind 0.0.0.0:8080 wsgi
 ```
 
-
-
 - Batch 처리에서는 `Sync` 를 통해서 한개의 프로세스 만으로 활용하기를 추천
 
 ```bash
 gunicorn -k sync --workers=1 --threads=1 --bind 0.0.0.0:8080 wsgi
 ```
-
-
-
-
 
 ### 4. PyTorch - CPU version
 
@@ -223,14 +183,16 @@ model = torch.jit.load(self.jit_path)
 
 
 
-참고자료
+### 참고자료
 
+- [https://discuss.pytorch.org/t/model-eval-vs-with-torch-no-grad/19615](https://discuss.pytorch.org/t/model-eval-vs-with-torch-no-grad/19615)
+- [https://blog.paperspace.com/pytorch-101-building-neural-networks/](https://blog.paperspace.com/pytorch-101-building-neural-networks/)
+- [https://github.com/heojae/FoodImageRotationAdmin/issues/27#issue-806993680](https://github.com/heojae/FoodImageRotationAdmin/issues/27#issue-806993680)
+- [https://github.com/heojae/FoodImageRotationAdmin/issues/33](https://github.com/heojae/FoodImageRotationAdmin/issues/33)
+- [https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/](https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/)
 - [https://towardsdatascience.com/pytorch-jit-and-torchscript-c2a77bac0fff](https://towardsdatascience.com/pytorch-jit-and-torchscript-c2a77bac0fff)
 
 ---
-
-
-
 
 
 ## AWS EB 를 활용해서, API 배포하기
@@ -249,25 +211,11 @@ Backend 개발자 한명이 AWS 환경에서 쉽게 로드벨런싱을 지원하
 아래 단계들이 필요로 합니다. 
 
 
-
-
-
 ### 1. AWS IAM 계정 생성하기
 
 - 그룹 및 사용자 생성
 - `Administrator Access - AWS Elastic Beanstalk` 추가
 - `AmazonEC2ContainerRegistryFullAccess` 추가
-
-
-
-참고자료
-
-- [https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/introduction.html](https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/introduction.html)
-- [https://tech.cloud.nongshim.co.kr/2018/10/13/초보자를-위한-aws-웹구축-2-iam-유저-생성하기/](https://tech.cloud.nongshim.co.kr/2018/10/13/%EC%B4%88%EB%B3%B4%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-aws-%EC%9B%B9%EA%B5%AC%EC%B6%95-2-iam-%EC%9C%A0%EC%A0%80-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0/)
-
-
-
-
 
 ### 2. AWS ECR 에 Docker Image 올리기
 
@@ -284,16 +232,6 @@ docker tag cartoonize_api:latest public.ecr.aws/{your ecr id}/{your ecr repo nam
 
 docker push public.ecr.aws/{your ecr id}/{your ecr repo name}:latest
 ```
-
-
-
-### 참고 링크
-
-- [https://docs.aws.amazon.com/ko_kr/AmazonECR/latest/userguide/docker-push-ecr-image.html](https://docs.aws.amazon.com/ko_kr/AmazonECR/latest/userguide/docker-push-ecr-image.html)
-- [https://aws.amazon.com/ko/ecr/pricing/](https://aws.amazon.com/ko/ecr/pricing/)
-
-
-
 
 
 ### 3. EB 에 배포하기 (실험 포함)
@@ -341,7 +279,6 @@ docker push public.ecr.aws/{your ecr id}/{your ecr repo name}:latest
 <img src="https://user-images.githubusercontent.com/41981538/158799681-7406e133-57e5-40d7-8c7c-3a3a0b009e23.jpg" width=700px height=125px>
 
 
-
 ### 부하 테스트 실험
 
 아래 파일을 로컬에서 파이썬으로 실행시켜서, EB로 Request 로 보냈습니다.
@@ -366,12 +303,7 @@ for i in range(all_count):
 print("평균 : ", sum(req_times)/all_count)**
 ```
 
-
-
 <img src="https://user-images.githubusercontent.com/41981538/158799697-a89595f8-c728-451d-b18b-bb78f582d7d8.png" width=700px height=400px>
-
-
-
 
 
 ### 결과
@@ -390,14 +322,15 @@ print("평균 : ", sum(req_times)/all_count)**
 - EC2 인스턴스 설정에서 부터, CPU가 좋은 인스턴스를 활용
 - Load Balancing 을 활용하여, 여러 인스턴스를 올림
 
-#### 참조 링크
+### 참조 링크
 
+- [https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/introduction.html](https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/introduction.html)
+- [https://tech.cloud.nongshim.co.kr/2018/10/13/초보자를-위한-aws-웹구축-2-iam-유저-생성하기/](https://tech.cloud.nongshim.co.kr/2018/10/13/%EC%B4%88%EB%B3%B4%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-aws-%EC%9B%B9%EA%B5%AC%EC%B6%95-2-iam-%EC%9C%A0%EC%A0%80-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0/)
+- [https://docs.aws.amazon.com/ko_kr/AmazonECR/latest/userguide/docker-push-ecr-image.html](https://docs.aws.amazon.com/ko_kr/AmazonECR/latest/userguide/docker-push-ecr-image.html)
+- [https://aws.amazon.com/ko/ecr/pricing/](https://aws.amazon.com/ko/ecr/pricing/)
 - [https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/create_deploy_docker.html](https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/create_deploy_docker.html)
 - [https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/single-container-docker-configuration.html](https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/single-container-docker-configuration.html)
 - [https://medium.com/devops-with-valentine/how-to-deploy-a-docker-container-to-aws-elastic-beanstalk-using-aws-cli-87ccef0d5189](https://medium.com/devops-with-valentine/how-to-deploy-a-docker-container-to-aws-elastic-beanstalk-using-aws-cli-87ccef0d5189)
-
-
-
 
 ---
 
