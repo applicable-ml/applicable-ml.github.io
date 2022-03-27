@@ -12,20 +12,6 @@ Doyoung Gwak:
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:tucan.dev@gmail.com"
 
-Jae Heo:
-  name        : "Jae Heo (Season 3)"
-  bio         : "ML 로 문제를 풀어나가는 것을 좋아합니다.<br>ML 을 서비스에서 쓸 수 있도록, 만드는 작업에 관심이 많습니다. "
-  avatar      : "/assets/images/bio-jaeheo.png"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/heojae"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:heojaw@gmail.com"
-
-
-
 Donghyun Kwak:
   name        : "Donghyun Kwak (Season 2, 3)"
   bio         : "딥러닝으로 실제 세상의 중요한 문제를 풀어보고 싶어서 열심히 공부중입니다."
@@ -70,6 +56,18 @@ Eunchul Jeon:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:jsharp83@gmail.com"
+      
+Jae Heo:
+  name        : "Jae Heo (Season 3)"
+  bio         : "ML 로 문제를 풀어나가는 것을 좋아합니다.<br>ML 을 서비스에서 쓸 수 있도록, 만드는 작업에 관심이 많습니다. "
+  avatar      : "/assets/images/bio-jaeheo.png"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/heojae"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:heojaw@gmail.com"
 
 Sangbum Choi:
   name        : "Sangbum Choi (Season 2, 3)"
