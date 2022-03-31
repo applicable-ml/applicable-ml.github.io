@@ -1,4 +1,8 @@
-# Custom TFLite Library for iOS Developer - en, md
+---
+title: Custom TFLite Library for iOS Developer
+tags: ['TFLite', 'iOS', 'Universal Framework']
+author: "Sangyeop Jeong"
+---
 
 # Intro
 
@@ -31,7 +35,7 @@ after build completes, `libtensorflow-lite.a` will be generated.
 
 # Add libtensorflow-lite.a in Xcode Project
 
-## Header File 추가
+## Add Header File
 
 : Let’s import libtensorflow-lite.a in Xcode Project.
 
