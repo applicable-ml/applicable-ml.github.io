@@ -89,7 +89,7 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
     - **Swin Transformer : Hierarchical Vision Transformer using Shifted Windows** ([ICCV 2021 Best paper](https://openaccess.thecvf.com/content/ICCV2021/html/Liu_Swin_Transformer_Hierarchical_Vision_Transformer_Using_Shifted_Windows_ICCV_2021_paper.html))
         - 기본적으로 Transformer는 mechanism 자체가 convolutional neural network와 비슷한 구조를 가지고 있지 않지만 coarse-to-fine 구조와 비슷하게 multi-level feature들을 고려하여서 최근 가지고 있는 model performance중에 가장 좋은 performance를 기록하고 있는 논문이다.
         - 2022/03/02 일 기준으로 조금 더 hyperparameter들의 tuning 밑 다양한 novelty를 통해서 Swin Transformer V2가 나오게 되었다.
-        - Shifted window의 작동 방식의 경우 대표적으로 아래와 같이 transformerblock에서도 level 1에서 torch.roll을 통해서 진행한다음 level 2에서 다시 그대로 input을 집어 넣으면서 진행된다.
+        - Shifted window의 작동 방식의 경우 대표적으로 아래와 같이 transformerblock에서도 level 1에서 `torch.roll`을 통해서 진행한 다음 level 2에서 다시 그대로 input을 집어 넣으면서 진행된다.
             
             ```python
             def window_partition(x, window_size):
