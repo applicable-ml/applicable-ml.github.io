@@ -23,7 +23,7 @@ Convolutional Neural Network(CNN), Recurrent Neural Network(RNN) 과 같이 이�
 
 [https://m.cafe.daum.net/funny-circuit/LfLC/2](https://m.cafe.daum.net/funny-circuit/LfLC/2)
 
-![[http://machinelearningkorea.com/2019/07/09/트랜스포머-transformer와-어텐션-attention을-통해서-bert이해하기/](http://machinelearningkorea.com/2019/07/09/%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A8%B8-transformer%EC%99%80-%EC%96%B4%ED%85%90%EC%85%98-attention%EC%9D%84-%ED%86%B5%ED%95%B4%EC%84%9C-bert%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/)](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F877650a2-2fef-46e6-8d53-36f8b15a6787%2FUntitled.png?table=block&id=d8fd4c1d-f9bb-41e8-bf25-34808fd95bbf&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
+<img src="https://user-images.githubusercontent.com/37643248/161418766-ad2eb5a7-a963-47dd-8b5d-c591479cf9a9.png" width=600px>
 
 [http://machinelearningkorea.com/2019/07/09/트랜스포머-transformer와-어텐션-attention을-통해서-bert이해하기/](http://machinelearningkorea.com/2019/07/09/%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A8%B8-transformer%EC%99%80-%EC%96%B4%ED%85%90%EC%85%98-attention%EC%9D%84-%ED%86%B5%ED%95%B4%EC%84%9C-bert%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/)
 
