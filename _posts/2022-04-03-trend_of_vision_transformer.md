@@ -19,11 +19,11 @@ Tags: APP-ML
 
 Convolutional Neural Network(CNN), Recurrent Neural Network(RNN) 과 같이 이름 자체에 특정 기능들을 가지고 있다시피 Transformer의 경우 Encoder-Decoder를 이루고 있는 구조가 Narrow하게 dimension이 줄어들지 않고 변압기(Transformer)와 같이 생겼다고 붙혀진 이름이라고 생각한다.
 
-![[https://m.cafe.daum.net/funny-circuit/LfLC/2](https://m.cafe.daum.net/funny-circuit/LfLC/2)](Vision-Tra%20a5a87/Untitled.png)
+![[https://m.cafe.daum.net/funny-circuit/LfLC/2](https://m.cafe.daum.net/funny-circuit/LfLC/2)](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F18145f0d-3643-4435-9271-2e758a41a43d%2FUntitled.png?table=block&id=a5a878e2-a47e-4b68-b5ce-bb54c24ba3b9&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
 
 [https://m.cafe.daum.net/funny-circuit/LfLC/2](https://m.cafe.daum.net/funny-circuit/LfLC/2)
 
-![[http://machinelearningkorea.com/2019/07/09/트랜스포머-transformer와-어텐션-attention을-통해서-bert이해하기/](http://machinelearningkorea.com/2019/07/09/%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A8%B8-transformer%EC%99%80-%EC%96%B4%ED%85%90%EC%85%98-attention%EC%9D%84-%ED%86%B5%ED%95%B4%EC%84%9C-bert%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/)](Vision-Tra%20a5a87/Untitled%201.png)
+![[http://machinelearningkorea.com/2019/07/09/트랜스포머-transformer와-어텐션-attention을-통해서-bert이해하기/](http://machinelearningkorea.com/2019/07/09/%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A8%B8-transformer%EC%99%80-%EC%96%B4%ED%85%90%EC%85%98-attention%EC%9D%84-%ED%86%B5%ED%95%B4%EC%84%9C-bert%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/)](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F877650a2-2fef-46e6-8d53-36f8b15a6787%2FUntitled.png?table=block&id=d8fd4c1d-f9bb-41e8-bf25-34808fd95bbf&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
 
 [http://machinelearningkorea.com/2019/07/09/트랜스포머-transformer와-어텐션-attention을-통해서-bert이해하기/](http://machinelearningkorea.com/2019/07/09/%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A8%B8-transformer%EC%99%80-%EC%96%B4%ED%85%90%EC%85%98-attention%EC%9D%84-%ED%86%B5%ED%95%B4%EC%84%9C-bert%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/)
 
@@ -35,13 +35,13 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
     - Sequence to Sequence란 두 개의 Recurrent Neural Network로 이루어진 모델로 input을 어떠한 feature representation으로 바꾸고 바꾸게 된 representation vector(context)를 decoder로 input으로 차례대로 넣어서 다시 word로 나타낼 수 있게 한다.
     - EOS와 SOS는 각각 문장의 종결, 시작으로 특정 index로 나타내는 것이고 Seq2Seq의 inference와 training stage 시의 동작 방식에 대한 차이점을 어느정도 이해하면 전체적은 흐름을 이해할 수 있다.
     
-    ![Untitled](Vision-Tra%20a5a87/Untitled%202.png)
+    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdc850515-a21b-4bf4-a3c7-edfe66d1d7a7%2FUntitled.png?table=block&id=dc518db2-ce12-4534-ad91-3b837aa98e49&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
     
 - Attention이란
     - Attention은 영어말 그대로 어떤 것에 ‘집중’할 것이냐에 관한 것이다. Hidden input space에서 scalar value (0~1)를 multiply해서 hidden input space안에서 보지 않을 hidden value를 만들어 낼 수 있다.
     - [https://blog.floydhub.com/attention-mechanism/](https://blog.floydhub.com/attention-mechanism/)
     
-    ![Untitled](Vision-Tra%20a5a87/Untitled%203.png)
+    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd8d0214e-a5fd-41f7-8c3e-21ddb21aa9d3%2FUntitled.png?table=block&id=0b7a2d3c-d278-497e-8f02-12e088c89889&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
     
 - Seq2Seq + Attention = Transformer?
     - 기본적인 구성요소는 seq2seq network과 attention algorithm을 가지고 있지만 이 의외에도 transformer만이 가지고 있는 여러가지 구성 요소들이 있다.
@@ -53,7 +53,7 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
 
 ### 2022년 현재 Vision Transformer의 위치
 
-![[https://paperswithcode.com/sota/image-classification-on-imagenet](https://paperswithcode.com/sota/image-classification-on-imagenet)](Vision-Tra%20a5a87/Untitled%204.png)
+![[https://paperswithcode.com/sota/image-classification-on-imagenet](https://paperswithcode.com/sota/image-classification-on-imagenet)](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8244380e-0eff-4e9a-bee0-74ced1365328%2FUntitled.png?table=block&id=450331c0-068d-44db-9992-326a8d092868&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
 
 [https://paperswithcode.com/sota/image-classification-on-imagenet](https://paperswithcode.com/sota/image-classification-on-imagenet)
 
@@ -79,14 +79,14 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
                     x)
         ```
         
-        ![[https://theaisummer.com/vision-transformer/](https://theaisummer.com/vision-transformer/)](Vision-Tra%20a5a87/Untitled%205.png)
+        ![[https://theaisummer.com/vision-transformer/](https://theaisummer.com/vision-transformer/)](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6d4e6020-25cd-44f2-93be-45e29a48cbfb%2FUntitled.png?table=block&id=8d290b33-3718-47e4-9c2c-2f603a924847&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
         
         [https://theaisummer.com/vision-transformer/](https://theaisummer.com/vision-transformer/)
         
     - BEiT: BERT Pre-Training of Image Transformers ([Arxiv](https://arxiv.org/abs/2106.08254))
         - 기본적으로 Image Transformer를 학습시키기 위해서 많은 data들이 필요하기 때문에 그러한 점 또한 보완 하기 위해서 self-supervised learning중에 한 가지 방법과 비슷한 blockwise masking을 이용하여서 더 좋은 performance를 기록하게 하는 것을 소개 했다.
         
-        ![[https://arxiv.org/pdf/2106.08254.pdf](https://arxiv.org/pdf/2106.08254.pdf)](Vision-Tra%20a5a87/Untitled%206.png)
+        ![[https://arxiv.org/pdf/2106.08254.pdf](https://arxiv.org/pdf/2106.08254.pdf)](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5125367b-6a64-4449-a5cb-6d6c25f05845%2FUntitled.png?table=block&id=2f964d7b-e12c-43cf-b74a-b4c25971d47f&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
         
         [https://arxiv.org/pdf/2106.08254.pdf](https://arxiv.org/pdf/2106.08254.pdf)
         
@@ -169,7 +169,7 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
             ```
             
         
-        ![[https://github.com/microsoft/Swin-Transformer](https://github.com/microsoft/Swin-Transformer)](Vision-Tra%20a5a87/Untitled%207.png)
+        ![[https://github.com/microsoft/Swin-Transformer](https://github.com/microsoft/Swin-Transformer)](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbcb51992-8ae5-443d-9a13-246d499d31bb%2FUntitled.png?table=block&id=831c442c-a50a-4959-8fe1-42cafe62c13d&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
         
         [https://github.com/microsoft/Swin-Transformer](https://github.com/microsoft/Swin-Transformer)
         
@@ -178,7 +178,7 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
         - 위 논문은 training 적인 부분 이외에도 coreml로 porting하는 과정까지 모두 공개가 되어 있어서 mobile implementation을 하기에 용이하다. ([Github](https://github.com/apple/ml-cvnets))
         - 일반적으로는 MobileNetV2의 작업들과 굉장히 비슷하고 PyTorch, Keras 모두 호환되는 공식코드가 있기에 실험적인 PoC에 사용해볼 수 있다.
         
-        ![Untitled](Vision-Tra%20a5a87/Untitled%208.png)
+        ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8a284b70-b996-4454-9ccc-1abea0596e87%2FUntitled.png?table=block&id=ab2ee3c4-a406-4152-be12-880aa07d61ec&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
         
 
 ### Conclusion
