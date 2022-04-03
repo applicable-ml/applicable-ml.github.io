@@ -4,10 +4,6 @@ tags: ['ml', 'vision', 'transformer', 'lightweight', 'tiny']
 author: "Sangbum Choi"
 ---
 
-# Vision-Transformer
-
-Created: November 12, 2021 10:56 AM
-Tags: APP-ML
 
 ### Introduction
 
