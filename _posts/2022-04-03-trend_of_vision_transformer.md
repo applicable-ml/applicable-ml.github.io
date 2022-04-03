@@ -56,7 +56,7 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
 위는 ImageNet classfication task에 대해서 현재 state-of-the-art(SOTA) performance를 기록하고 있는 papers-with-code의 site이다. 1위의 경우 CoAtNet-7이라고 해서 [Neural Architecture Search(NAS)](https://en.wikipedia.org/wiki/Neural_architecture_search)라는 개념을 사용한 것이고 그것 바로 아래로 ViT-G/14로 Vision in Transformer에서 나오는 Vision Transformer를 사용하고 있다. 이외에도 다양한 [semantic segmentation](https://en.wikipedia.org/wiki/Image_segmentation), [depth estimation](https://en.wikipedia.org/wiki/Depth_perception) 등 다양한 분야에 대해서 좋은 성능을 보이고 있다.
 
 - Various paper of ViT
-    - AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE (Vision in Transformer) ([ICLR2021](https://openreview.net/forum?id=YicbFdNTTy))
+    - **AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE (Vision in Transformer)** ([ICLR2021](https://openreview.net/forum?id=YicbFdNTTy))
         - Vision in Transformer같은 경우 위에서 Seq2Seq 개념에서 input에 각각의 단어가 들어가는 과정에서 image를 patch형태로 쪼개고 그 patch를 일정 pre-processing 개념으로 나눠서 transformer에 들어가게 된다.
         
         ```python
