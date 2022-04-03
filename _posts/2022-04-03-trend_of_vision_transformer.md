@@ -35,7 +35,7 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
     - Sequence to Sequence란 두 개의 Recurrent Neural Network로 이루어진 모델로 input을 어떠한 feature representation으로 바꾸고 바꾸게 된 representation vector(context)를 decoder로 input으로 차례대로 넣어서 다시 word로 나타낼 수 있게 한다.
     - EOS와 SOS는 각각 문장의 종결, 시작으로 특정 index로 나타내는 것이고 Seq2Seq의 inference와 training stage 시의 동작 방식에 대한 차이점을 어느정도 이해하면 전체적은 흐름을 이해할 수 있다.
     
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdc850515-a21b-4bf4-a3c7-edfe66d1d7a7%2FUntitled.png?table=block&id=dc518db2-ce12-4534-ad91-3b837aa98e49&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
+    ![image](https://user-images.githubusercontent.com/37643248/161419233-66723136-9b70-47a5-92f4-e558f1e99480.png)
     
 - Attention이란
     - Attention은 영어말 그대로 어떤 것에 ‘집중’할 것이냐에 관한 것이다. Hidden input space에서 scalar value (0~1)를 multiply해서 hidden input space안에서 보지 않을 hidden value를 만들어 낼 수 있다.
