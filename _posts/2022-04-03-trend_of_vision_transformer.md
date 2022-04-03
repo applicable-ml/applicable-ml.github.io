@@ -169,7 +169,7 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
             ```
             
         
-        ![[https://github.com/microsoft/Swin-Transformer](https://github.com/microsoft/Swin-Transformer)](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbcb51992-8ae5-443d-9a13-246d499d31bb%2FUntitled.png?table=block&id=831c442c-a50a-4959-8fe1-42cafe62c13d&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
+        ![image](https://user-images.githubusercontent.com/37643248/161419371-cf2cfa0f-4a14-4495-ad06-865f7a1edef9.png)
         
         [https://github.com/microsoft/Swin-Transformer](https://github.com/microsoft/Swin-Transformer)
         
