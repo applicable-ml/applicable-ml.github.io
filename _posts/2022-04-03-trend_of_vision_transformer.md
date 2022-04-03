@@ -86,7 +86,7 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
     - **BEiT: BERT Pre-Training of Image Transformers** ([Arxiv](https://arxiv.org/abs/2106.08254))
         - 기본적으로 Image Transformer를 학습시키기 위해서 많은 data들이 필요하기 때문에 그러한 점 또한 보완 하기 위해서 self-supervised learning중에 한 가지 방법과 비슷한 blockwise masking을 이용하여서 더 좋은 performance를 기록하게 하는 것을 소개 했다.
         
-        ![[https://arxiv.org/pdf/2106.08254.pdf](https://arxiv.org/pdf/2106.08254.pdf)](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5125367b-6a64-4449-a5cb-6d6c25f05845%2FUntitled.png?table=block&id=2f964d7b-e12c-43cf-b74a-b4c25971d47f&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
+        ![image](https://user-images.githubusercontent.com/37643248/161419322-e6b337d9-c975-434f-9736-dd27f839e2c4.png)
         
         [https://arxiv.org/pdf/2106.08254.pdf](https://arxiv.org/pdf/2106.08254.pdf)
         
