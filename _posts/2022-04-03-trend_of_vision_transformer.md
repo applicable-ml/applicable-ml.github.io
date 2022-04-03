@@ -41,7 +41,7 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
     - Attention은 영어말 그대로 어떤 것에 ‘집중’할 것이냐에 관한 것이다. Hidden input space에서 scalar value (0~1)를 multiply해서 hidden input space안에서 보지 않을 hidden value를 만들어 낼 수 있다.
     - [https://blog.floydhub.com/attention-mechanism/](https://blog.floydhub.com/attention-mechanism/)
     
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd8d0214e-a5fd-41f7-8c3e-21ddb21aa9d3%2FUntitled.png?table=block&id=0b7a2d3c-d278-497e-8f02-12e088c89889&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
+    ![image](https://user-images.githubusercontent.com/37643248/161419265-33377a18-ca5f-4af8-9bd2-45d1ecf3be72.png)
     
 - Seq2Seq + Attention = Transformer?
     - 기본적인 구성요소는 seq2seq network과 attention algorithm을 가지고 있지만 이 의외에도 transformer만이 가지고 있는 여러가지 구성 요소들이 있다.
