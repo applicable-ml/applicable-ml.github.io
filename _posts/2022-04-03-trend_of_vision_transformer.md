@@ -187,4 +187,4 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
 
 ### Appendix
 
-[Transformer.pdf](Vision-Tra%20a5a87/Transformer.pdf)
+[Transformer.pdf](https://github.com/applicable-ml/applicable-ml.github.io/files/8404090/Transformer.pdf)
