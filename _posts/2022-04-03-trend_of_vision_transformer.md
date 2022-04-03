@@ -79,7 +79,7 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
                     x)
         ```
         
-        ![[https://theaisummer.com/vision-transformer/](https://theaisummer.com/vision-transformer/)](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6d4e6020-25cd-44f2-93be-45e29a48cbfb%2FUntitled.png?table=block&id=8d290b33-3718-47e4-9c2c-2f603a924847&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
+        ![image](https://user-images.githubusercontent.com/37643248/161419307-1f42890d-30c7-4a50-9297-5193aa5934b0.png)
         
         [https://theaisummer.com/vision-transformer/](https://theaisummer.com/vision-transformer/)
         
