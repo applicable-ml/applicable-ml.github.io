@@ -178,7 +178,7 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
         - 위 논문은 training 적인 부분 이외에도 coreml로 porting하는 과정까지 모두 공개가 되어 있어서 mobile implementation을 하기에 용이하다. ([Github](https://github.com/apple/ml-cvnets))
         - 일반적으로는 MobileNetV2의 작업들과 굉장히 비슷하고 PyTorch, Keras 모두 호환되는 공식코드가 있기에 실험적인 PoC에 사용해볼 수 있다.
         
-        ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8a284b70-b996-4454-9ccc-1abea0596e87%2FUntitled.png?table=block&id=ab2ee3c4-a406-4152-be12-880aa07d61ec&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
+        ![image](https://user-images.githubusercontent.com/37643248/161419393-d1270b2e-0bab-4bdf-b066-7580c89802ff.png)
         
 
 ### Conclusion
