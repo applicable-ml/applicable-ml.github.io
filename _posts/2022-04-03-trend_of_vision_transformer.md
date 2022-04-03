@@ -19,7 +19,7 @@ Tags: APP-ML
 
 Convolutional Neural Network(CNN), Recurrent Neural Network(RNN) 과 같이 이름 자체에 특정 기능들을 가지고 있다시피 Transformer의 경우 Encoder-Decoder를 이루고 있는 구조가 Narrow하게 dimension이 줄어들지 않고 변압기(Transformer)와 같이 생겼다고 붙혀진 이름이라고 생각한다.
 
-![[https://m.cafe.daum.net/funny-circuit/LfLC/2](https://m.cafe.daum.net/funny-circuit/LfLC/2)](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F18145f0d-3643-4435-9271-2e758a41a43d%2FUntitled.png?table=block&id=a5a878e2-a47e-4b68-b5ce-bb54c24ba3b9&spaceId=481d9426-889b-4f3b-826f-aa895f410530&width=2000&userId=0d8a9c44-fd32-4ae6-b440-1997ded9b6bd&cache=v2)
+![image](https://user-images.githubusercontent.com/37643248/161419184-ad2ec98f-a8ce-44e8-9306-0c3ecc313590.png)
 
 [https://m.cafe.daum.net/funny-circuit/LfLC/2](https://m.cafe.daum.net/funny-circuit/LfLC/2)
 
