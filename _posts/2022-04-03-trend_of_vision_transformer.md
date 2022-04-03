@@ -1,6 +1,6 @@
 ---
 title: Trend of Vision Transformer
-tags: ['monthly', 'ml', 'transformer', 'tiny', 'vision']
+tags: ['ml', 'vision', 'transformer', 'lightweight', 'tiny']
 author: "Sangbum Choi"
 ---
 
