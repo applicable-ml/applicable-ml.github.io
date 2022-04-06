@@ -1,8 +1,10 @@
 ---
 title: Custom TFLite Library for iOS Developer
-tags: ['TFLite', 'iOS', 'Universal Framework']
+tags: ['TFLite', 'iOS', 'Universal Framework', 'Model Serving']
 author: "Sangyeop Jeong"
 ---
+
+> [Custom TFLite Library for iOS Developer (en)](custom_tflite_library_for_ios_developer_en)
 
 # Intro
 
@@ -29,7 +31,9 @@ pod ‘TensorFlowLiteObjC’
 
 : TFLite Project에는 iOS용 Universal Library를 Build하는 Script가 있습니다. Script는 이 [Link](https://github.com/tensorflow/tensorflow/blob/v2.4.2/tensorflow/lite/tools/make/build_ios_universal_lib.sh)에서 보실 수 있습니다. x86_64 계열 Mac을 사용한다고 가정하고, 아래와 같이 argument를 명시해서 Script를 실행해 봅시다.
 
+```bash
 ./build_ios_universal_lib.sh -a “x86_64 arm64”
+```
 
 Build 결과물로 libtensorflow-lite.a가 생성됩니다.
 
