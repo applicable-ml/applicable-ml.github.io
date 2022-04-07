@@ -13,7 +13,7 @@ author: "Sangbum Choi"
 
 [트랜스포머(Transformer)는 2017년 구글이 발표한 논문인 "Attention is all you need"에서 나온 모델로 기존의 seq2seq의 구조인 인코더-디코더를 따르면서도, 논문의 이름처럼 어텐션(Attention)만으로 구현한 모델입니다. 이 모델은 RNN을 사용하지 않고, 인코더-디코더 구조를 설계하였음에도 번역 성능에서도 RNN보다 우수한 성능을 보여주었다.](https://wikidocs.net/31379)
 
-Convolutional Neural Network(CNN), Recurrent Neural Network(RNN) 과 같이 이름 자체에 특정 기능들을 가지고 있다시피 Transformer의 경우 Encoder-Decoder를 이루고 있는 구조가 Narrow하게 dimension이 줄어들지 않고 변압기(Transformer)와 같이 생겼다고 붙혀진 이름이라고 생각한다.
+Convolutional Neural Network(CNN), Recurrent Neural Network(RNN) 과 같이 이름 자체에 특정 기능들을 가지고 있다시피 Transformer의 경우 Encoder-Decoder를 이루고 있는 구조가 narrow하게 dimension이 줄어들지 않고 변압기(Transformer)와 같이 생겼다고 붙혀진 이름이라고 생각한다.
 
 ![image](https://user-images.githubusercontent.com/37643248/161419184-ad2ec98f-a8ce-44e8-9306-0c3ecc313590.png)
 
