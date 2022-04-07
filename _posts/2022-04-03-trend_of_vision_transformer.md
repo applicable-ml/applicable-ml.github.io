@@ -170,7 +170,7 @@ Transformer는 디테일한 과정을 제외한다면 크게 Seq-Seq 와 Attenti
         [https://github.com/microsoft/Swin-Transformer](https://github.com/microsoft/Swin-Transformer)
         
     - **MobileViT: Light-weight, General-purpose, and Mobile friendly Vision Transformer** ([Arxiv](https://arxiv.org/abs/2110.02178), ICLR 22)
-        - 기존에 transformer의 network들이 mobilenetv2와 같은 lightweight network에 비해서 mobile device에서 optimization이 안되어 있는 경향을 보이는데 최대한 inference engine의 부하를 줄이기 위해서 여러가지 기법들을 사용한 논문들 중에 하나이다. 많은 novelty들이 들어있지는 않지만 속도적인 측면에서 우월성을 보인다.
+        - 기존에 transformer의 network들이 MobileNetV2와 같은 lightweight network에 비해서 모바일 기기에서 optimization이 안되어 있는 경향을 보이는데 최대한 inference engine의 부하를 줄이기 위해서 여러가지 기법들을 사용한 논문들 중에 하나이다. 많은 novelty들이 들어있지는 않지만 속도적인 측면에서 우월성을 보인다.
         - 위 논문은 모델 학습 부분 이외에도 Core ML 모델로 포팅하는 과정까지 모두 공개가 되어 있어서 모바일에서 구현 하기에 용이하다. ([Github](https://github.com/apple/ml-cvnets))
         - 일반적으로는 MobileNetV2의 작업들과 굉장히 비슷하고 PyTorch, Keras 모두 호환되는 공식코드가 있기에 실험적인 PoC에 사용해볼 수 있다.
         
