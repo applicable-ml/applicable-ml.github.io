@@ -1,10 +1,10 @@
 ---
-title: Custom TFLite Library for iOS Developer
+title: Custom TFLite Library for iOS Developer (English)
 tags: ['TFLite', 'iOS', 'Universal Framework', 'Model Serving']
 author: "Sangyeop Jeong"
 ---
 
-> [Custom TFLite Library for iOS Developer (한국어)](custom_tflite_library_for_ios_developer_kr)
+> [Custom TFLite Library for iOS Developer (한국어)](https://applicable-ml.github.io/custom_tflite_library_for_ios_developer_kr/)
 
 # Intro
 
