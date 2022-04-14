@@ -8,7 +8,7 @@ use_math: true
 
 ![그림 1. 체리피킹된 데모영상](https://user-images.githubusercontent.com/37643248/163402050-1d5c3527-9d73-4a06-8525-fc1292eb483b.gif) | ![demo-excel-scanner-poc-220219-3.gif](https://user-images.githubusercontent.com/37643248/163402467-99474c46-278e-485b-8fd7-c673ab79f2da.gif)
 -- | --
-그림 1. 체리피킹된 데모영상 |  
+그림 1-1. 체리피킹된 데모영상 |  그림 1-2. 약간 문제가 있는 데모영상
 
 **실시간 [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition)**과 **규칙기반 표 파싱 알고리즘**을 통해 인쇄된 표 문서를 파일(`.csv`)로 추출하는 iOS [POC](https://en.wikipedia.org/wiki/Proof_of_concept) 앱(**Excel Scanner**)을 제작하였습니다. OCR은 딥러닝 모델을 사용했을텐데, 애플과 구글의 비전 프레임워크를 활용하여 직접 모델을 학습하지 않고도 좋은 성능의 OCR을 활용할 수 있었고, OCR의 결과를 잘 가공하는 표 파싱 알고리즘을 규칙기반으로 제작하였습니다. 이 글에서는 미리 학습된 온디바이스 머신러닝 모델을 활용하여 구축했던 전반적인 프로세스를 소개, 규칙기반 알고리즘이 동작하는 방식 소개, 각 프레임워크를 비교하기 위해 살펴봤던 관점과 간단한 실험내용을 정리하였습니다.
 
