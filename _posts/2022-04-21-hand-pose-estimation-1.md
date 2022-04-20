@@ -4,7 +4,7 @@ tags: ['ml', 'vision']
 author: "Dongseok Yang"
 ---
 
-## 0. 시작하기.
+## 0. 시작하기
 
 - 해당 포스팅의 목적은 “팜 글러브: 시계형 적외선 카메라 기반 손 HCI 하드웨어 및 소프트웨어 제작” 입니다.
 - 이번 포스팅은 3부분으로 구성되어 있습니다.
@@ -31,9 +31,9 @@ author: "Dongseok Yang"
 - 그 중 손은 의사소통을 하는 과정에서 가장 많이 활용되는 신체 입니다. 따라서 손은 HCI 분야에 핵심적인 관심 분야입니다.
 - 본 기사의 목표는 팜 글러브라는 디바이스와 영상처리 기법을 위해 재활 환자들게 디지털 손 재활 훈련을 제공하기 위한 목적을 가지고 있습니다.
 
-![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%201%20(Image%20Processing%207ebbe4007bde4604ab2d2ad097c804a0/Untitled.png)
+<img src="https://user-images.githubusercontent.com/37643248/164342167-8a2d9a3d-d6d9-43b3-8b6a-fcf07a9e89f8.png">
 
-![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%201%20(Image%20Processing%207ebbe4007bde4604ab2d2ad097c804a0/Untitled%201.png)
+<img src="https://user-images.githubusercontent.com/37643248/164342190-b51d7f70-3fd5-45cf-820d-002e32ccd0d9.png">
 
 ## 3. Hardware
 
@@ -43,7 +43,7 @@ author: "Dongseok Yang"
 - 이러한 문제점은 카메라를 사용하면 해결됩니다.
 - 하지만 거치형 카메라는 공간에 제약을 받고, 시계형 타입 카메라 디바이스는 손목의 움직임에 따라 손의 뷰를 얻는데 제한적 입니다.
 
-![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%201%20(Image%20Processing%207ebbe4007bde4604ab2d2ad097c804a0/Untitled%202.png)
+<img src="https://user-images.githubusercontent.com/37643248/164342222-9920b26c-0911-4a98-ab16-e0bbc5733cca.png">
 
 - 제안한 손 영상 획득을 위한 HW 구성은 손바닥에 부착하는 카메라로 손 자세 및 동작 분석이 가능한 웨어러블 디바이스 입니다. 또한 블루투스 및 HID 모듈이 내장되어 있어 피시 및 스마트 기기와 인터페이스 연동이 가능합니다.
 - 이러한 구조의 장점은 다음과 같습니다.
@@ -66,25 +66,25 @@ author: "Dongseok Yang"
 
 ---
 
-![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%201%20(Image%20Processing%207ebbe4007bde4604ab2d2ad097c804a0/Untitled%203.png)
+<img src="https://user-images.githubusercontent.com/37643248/164342236-659293a0-a480-4e75-a4eb-8ae35aeb3236.png">
 
-## 4. ****영상처리 - 손의 운동학적 분석 기반 기하학적 특징 추출****
+## 4. 영상처리 - 손의 운동학적 분석 기반 기하학적 특징 추출
 
 - 본격적인 Hand gesture/pose estimation에 대한 알고리즘을 분석해 보겠습니다. 본 단락에서는 순수한 영상처리 기법만을 활용하여 손의 운동학적 특징을 추출하는 알고리즘에 대해서 소개합니다.
 - 또한 손가락이 폐색되어 보이지 않는 경우 손의 관절 부분인 MCP 라인 추출 기법을 손가락의 인덱스를 정확히 판단하는 기법에 대해서도 소개합니다.
 - 먼저 손 객체 추출에 대해서 말씀 드리겠습니다.
 - 앞서 설명드렸듯이, 팜 글러브에서는 HSV 컬러모델의 Value 값의 이진화 분리만을 가지고도 견고한 손 객체 추출이 가능합니다.
 
-![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%201%20(Image%20Processing%207ebbe4007bde4604ab2d2ad097c804a0/Untitled%204.png)
+<img src="https://user-images.githubusercontent.com/37643248/164342258-5117efd7-6ffb-487d-bad2-51c41266f8aa.png">
 
 - 손 객체를 얻으면 손의 상단 경계선을 추출합니다. 방식은 순차적 서칭 방식으로 사용하며 픽셀 값이 0이되지 않는 구간의 모든 가로 점으로 추출합니다.
 - 또한 추출된 점은 이전 점과 비교하여 상승 점인지 하강 점인지 구분되며 상승과 하강이 교차하는 점을 그림의 보라색과 같이 손가락 끝점으로 정의합니다.
 
-![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%201%20(Image%20Processing%207ebbe4007bde4604ab2d2ad097c804a0/Untitled%205.png)
+<img src="https://user-images.githubusercontent.com/37643248/164342281-2e48f8c6-ab83-4175-9f10-8de39067dbb9.png">
 
 - 하지만 보시는 그림과 같이, 엄지손가락에서 상승 하강 곡선이 생성되지 않아 손가락 끝점이 추출되지 않은 경우가 할 수도 있습니다.
 
-![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%201%20(Image%20Processing%207ebbe4007bde4604ab2d2ad097c804a0/Untitled%206.png)
+<img src="https://user-images.githubusercontent.com/37643248/164342295-fd12c76e-19dd-4389-a71c-93b2ff8a5bc3.png">
 
 - 따라서 명확한 손가락 끝점을 찾기 위해 오른쪽 그림의 노란점과 같이 일정한 오프셋을 가지는 4가지 후보군 극점을 추가합니다.
 - 이후 4가지 후보군 극점과 추출된 손가락 끝점을 기준으로 우하-방향성 마스크를 이용하여 손가락 경계선 추적 알고리즘이 적용됩니다
@@ -92,7 +92,7 @@ author: "Dongseok Yang"
 - 또한 그림에 보라색 원과 같이 일정한 높이 기준으로 사영되는 점을 사영점이라고 정의합니다.
 - 이로 인해, 추출된 외각선을 기반과 사영점을 활용하여 손가락 움직임의 세부 분석이 가능합니다.
 
-![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%201%20(Image%20Processing%207ebbe4007bde4604ab2d2ad097c804a0/Untitled%207.png)
+<img src="https://user-images.githubusercontent.com/37643248/164342321-edd8c73a-74f9-4df0-82e3-a39fd1e6448b.png">
 
 - 마지막으로 [MCP(**Metacarpophalangeal](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=spm0808&logNo=40207380223))** 라인을 이용한 손가락 인덱싱 방법에 대해서 말씀드리겠습니다.
 - MCP 라인을 구하는 방법은 왼쪽 위의 그림과 같습니다.
@@ -101,9 +101,9 @@ author: "Dongseok Yang"
 - 실험결과 위와 같이 손가락이 존재하는 범위를 정의하였고 MCP라인 기준으로 손가락이 존재하지 않는다면 손가락 인덱싱 과정에서 제외됩니다.
 - 아래 그림들에서 손가락이 없어진 상황에서도 정확한 인덱싱 결과를 도출하는 것을 보실 수가 있습니다.
 
-![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%201%20(Image%20Processing%207ebbe4007bde4604ab2d2ad097c804a0/Untitled%208.png)
+<img src="https://user-images.githubusercontent.com/37643248/164342342-95b90727-5f46-4065-a490-371aa449e80e.png">
 
-[https://youtu.be/UtzxFnwHw4g](https://youtu.be/UtzxFnwHw4g)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UtzxFnwHw4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Reference
 
