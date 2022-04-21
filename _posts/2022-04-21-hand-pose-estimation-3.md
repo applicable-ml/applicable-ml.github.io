@@ -2,6 +2,7 @@
 title: Hand Gesture/Pose Estimation - 3 (Gesture Recognition)
 tags: ['ml', 'vision']
 author: "Dongseok Yang"
+use_math: true
 ---
 
 ## 1. Intro
@@ -13,7 +14,7 @@ author: "Dongseok Yang"
     - 왜나하면 핀치 동작은 카메라 뷰 관점에서 손가락 폐색 현상, 즉 손가락이 안보이는 현상이 매우 빈번하게 일어나기 때문입니다.
 - 이러한 문제점을 해결하기 위해 본 장에서는 제안했던 딥러닝 기반 손 자세 추정과 손의 운동학적 특징을 융합하여 핀치 문제를 해결하려 합니다.
 
-![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%203%20(Gesture%20Recognit%2064014ab872494f77b34c0111cf54f952/Untitled.png)
+<img src="https://user-images.githubusercontent.com/37643248/164343358-8e64b0da-b0b5-4d64-9553-f08e4a1188bb.png">
 
 ## 2. Pinch Gesture Recognition
 
@@ -24,23 +25,29 @@ author: "Dongseok Yang"
 - 이러한 특성을 이용하여 기하학적 분석에 사용되는 손가락 끝점을 선택적으로 사용할 수 있게 됩니다. 이렇게 선택된 손가락 끝점을 Tn으로 정의합니다. 또한 엄지 손가락의 경계선 추적 라인의 좌우 픽셀값을 체크하여 이용하여 엄지손가락이 다른 손가락과 터치 하였는지 인식합니다.
 - 터치가 인식되면 나머지 선택된 손가락 끝점도 경계선 추적 라인을 추출합니다. 추출된 경계선 추적 라인은 사영되고 되고 겹치지 않는 사영점의 갯수로 핀치 제스처를 결정합니다.
 
-![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%203%20(Gesture%20Recognit%2064014ab872494f77b34c0111cf54f952/Untitled%201.png)
+<img src="https://user-images.githubusercontent.com/37643248/164343389-dfb85639-2222-4f98-bea6-78a302b3fdfd.png">
 
 - 각 손가락 관절 포인트
     
-    ![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%203%20(Gesture%20Recognit%2064014ab872494f77b34c0111cf54f952/Untitled%202.png)
+    $$
+    K_n = Fingertaps point, n = Thumb, Index Middle, Ring, Pinky
+    $$
     
 - 각 손가락 신뢰성 맵
     
-    ![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%203%20(Gesture%20Recognit%2064014ab872494f77b34c0111cf54f952/Untitled%203.png)
+    $$
+    C_n = (c_{0:2}, c_{3:6}, c_{7:10}, c_{11:14}, c_{15:18})
+    $$
     
 - 손가락 끝점의 선택적 사용 방법
     
-    ![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%203%20(Gesture%20Recognit%2064014ab872494f77b34c0111cf54f952/Untitled%204.png)
+    <img src="https://user-images.githubusercontent.com/37643248/164343642-e3ef1f01-2aec-4fd4-b89b-df770b15d108.png">
     
 - 사영된 점을 통한 핀치 인식
     
-    ![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%203%20(Gesture%20Recognit%2064014ab872494f77b34c0111cf54f952/Untitled%205.png)
+    $$
+    P_n = f(T_n)
+    $$
     
 - 핀치탭의 정확도를 분석하기 위해 사용자 손 대상으로 2천개의 데이터세트를 추출하여 실험하였습니다.
 - 본 포스팅에서는 PPH 방식, TTRPP 방식, HPE 방식을 제안하고 해당 기술에 대한 비교를 진행하였습니다.
@@ -50,13 +57,11 @@ author: "Dongseok Yang"
 - 일반적으로 인터페이스를 검증하기 위해서는 사람의 인지 속도와 기술의 연산 속도가 1초 이하로 평가되야 합니다.
 - 반응속도 평가 결과 싱글 테스트는 0.74초, 사이클 테스트는 1.87초의 결과로서 인터페이스로 적합한 결과를 도출하였습니다.
 
-![Untitled](Hand%20Gesture%20Pose%20Estimation%20-%203%20(Gesture%20Recognit%2064014ab872494f77b34c0111cf54f952/Untitled%206.png)
+<img src="https://user-images.githubusercontent.com/37643248/164343438-b6e0bdcf-84b1-43c4-a4cb-e18576c11cd2.png">
 
-[https://youtu.be/_1du9WUu8qg](https://youtu.be/_1du9WUu8qg)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_1du9WUu8qg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-.
-
-## 3. 포스팅을 마치며..
+## 3. 포스팅을 마치며...
 
 - 본 프로젝트의 목표를 해야겠다고 다짐했을 때가 생각납니다. 제가 시장 조사를 위해 병원에 방문 하였을 때, 손 재활은 환자들에게 매우 필요하지만, 사실상 많은 환자들이 노동 집약적인 의료 상황에서 1시간을 이동하고... 1시간을 기다리고... **30분 치료받고**... 다시 1시간을 걸쳐 돌아가야 하는 모습들이 떠오릅니다.
 - 본 포스팅은 글러브 형식의 HW와 순수 영상처리, 딥러닝 적용 및 인터페이스 평가 등으로 구성되어 있습니다.
