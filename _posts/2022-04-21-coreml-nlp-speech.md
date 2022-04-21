@@ -16,7 +16,7 @@ author: "Sungwook Baek"
 
 - 어디에서 무엇을 샀고 지출액이 총 얼마인지를 기록해줘.
     
-    <img src="https://user-images.githubusercontent.com/37643248/164344080-8d413ca4-8020-4b2b-9073-242c0d000018.png" width="300px">
+    <img src="https://user-images.githubusercontent.com/37643248/164344080-8d413ca4-8020-4b2b-9073-242c0d000018.png" width="400px">
     
 <img src="https://user-images.githubusercontent.com/37643248/164344156-1195c4ba-9d7e-43a4-923d-9006455c854f.png">
 
@@ -50,13 +50,8 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
 
 [SFSpeechRecognizerDelegate](https://developer.apple.com/documentation/speech/sfspeechrecognizer/1649893-delegate)는 음성인식 기능이 현재 디바이스에서 사용가능한 상태인지를 확인하는 용도로 사용한다. 예를 들어 디바이스의 인터넷 연결상태 혹은 아이폰 모델별로 이 기능을 사용할 수 있는지 여부등을 확인할 수 있다.
 
-`isAvailable`
-
-- 현재 음성인식 기능을 사용할 수 있는지 여부를 확인
-
-`supportsOnDeviceRecognition`
-
-- 현재 사용자의 아이폰 모델이 인터넷 연결 없이도 음성인식 기능을 사용할 수 있는지 여부를 확인
+- `isAvailable`: 현재 음성인식 기능을 사용할 수 있는지 여부를 확인
+- `supportsOnDeviceRecognition`: 현재 사용자의 아이폰 모델이 인터넷 연결 없이도 음성인식 기능을 사용할 수 있는지 여부를 확인
 
 먼저 한국어 인식을 테스트하기 위해 `SFSpeechRecognizer`생성 시 언어 세팅 값을 한국어로 변경하자.
 
@@ -103,6 +98,7 @@ recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { r
 let locales = SFSpeechRecognizer.supportedLocales()
 
 //Output
+/*
 [cs-CZ (fixed), da-DK (fixed), wuu-CN (fixed), de-DE (fixed), 
 th-TH (fixed), en-ID (fixed), vi-VN (fixed), sk-SK (fixed), 
 nl-BE (fixed), fr-CA (fixed), ca-ES (fixed), ro-RO (fixed), 
@@ -119,6 +115,7 @@ id-ID (fixed), en-IN (fixed), it-IT (fixed), zh-HK (fixed),
 en-AU (fixed), ko-KR (fixed), fi-FI (fixed), zh-CN (fixed), 
 fr-FR (fixed), es-MX (fixed), en-NZ (fixed), en-PH (fixed), 
 ar-SA (fixed), fr-BE (fixed), nb-NO (fixed)]
+*/
 ```
 
 Speech Framework를 이용하여 음성인식까지는 잘 되는 것을 확인했다. 즉 음성 인식 단계에서는 내가 별도로 추가적으로 인식율을 높이기 위한 작업이 필요없다는 것을 알았다. 아래 그림의 빨간색으로 표시한 부분까지는 확인한 셈이다.
@@ -147,12 +144,9 @@ let supportTags = NLTagger.availableTagSchemes(
 
 아쉽게도 한국어 관련된 정보분석은 아래와 같이 3가지 정도만 지원한다.
 
-- `tokenType`
-    - 입력 값이 단어인지 문장인지 등을 판단
-- `language`
-    - 입력 값이 한국어인지 영어인지 판단
-- `script`
-    - 입력값의 언어가 독일어면 `German` 중국어면 `Hant` 영어면 `Latin`이라고 알려준다. 한국어를 테스트 해보니 `Kore`라고 나온다. 이 부분이 조금 이상했다. `Korea`라고 나와야 되는거 아닌지?
+- `tokenType`: 입력 값이 단어인지 문장인지 등을 판단
+- `language`: 입력 값이 한국어인지 영어인지 판단
+- `script`: 입력값의 언어가 독일어면 `German` 중국어면 `Hant` 영어면 `Latin`이라고 알려준다. 한국어를 테스트 해보니 `Kore`라고 나온다. 이 부분이 조금 이상했다. `Korea`라고 나와야 되는거 아닌지?
 
 ```swift
 let inputString = "한국어"
