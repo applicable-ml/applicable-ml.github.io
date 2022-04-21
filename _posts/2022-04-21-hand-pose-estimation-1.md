@@ -12,10 +12,10 @@ author: "Dongseok Yang"
     - **Hand Gesture/Pose Estimation - 1 (Image Processing)**
     - HW 구성, 순수 영상처리 기법을 활용한 손 자세 추정 내용으로 구성되어 있습니다.
 - 두번째 포스팅
-    - ****Hand Gesture/Pose Estimation - 2 (Deep Learning)****
+    - **Hand Gesture/Pose Estimation - 2 (Deep Learning)**
     - 손 자세 추정을 위해 딥러닝 접근법을 설명합니다. 또한 모델 경량화를 위한 내용이 포함되어 있습니다.
 - 세번째 포스팅
-    - ****Hand Gesture/Pose Estimation - 3 (Gesture Recognition)****
+    - **Hand Gesture/Pose Estimation - 3 (Gesture Recognition)**
     - 해당 포스팅은 Thumb-to Finger Tap이라는 제스처를 인식하기 위한 기술을 설명합니다.
 
 
