@@ -1,6 +1,6 @@
 ---
 title: Hand Gesture/Pose Estimation - 3 (Gesture Recognition)
-tags: ['ml', 'vision']
+tags: ['ml', 'vision', 'hand-pose-estimation', 'pose-estimation', 'gesture-recognition']
 author: "Dongseok Yang"
 use_math: true
 ---
