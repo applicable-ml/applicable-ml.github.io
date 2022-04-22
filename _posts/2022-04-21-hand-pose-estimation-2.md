@@ -1,6 +1,6 @@
 ---
 title: Hand Gesture/Pose Estimation - 2 (Deep Learning)
-tags: ['ml', 'vision']
+tags: ['ml', 'vision', 'hand-pose-estimation', 'pose-estimation', 'deep-learning']
 author: "Dongseok Yang"
 ---
 
