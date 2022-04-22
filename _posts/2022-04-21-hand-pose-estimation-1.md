@@ -1,6 +1,6 @@
 ---
 title: Hand Gesture/Pose Estimation - 1 (Image Processing)
-tags: ['ml', 'vision']
+tags: ['ml', 'vision', 'hand-pose-estimation', 'pose-estimation', 'preprocessing']
 author: "Dongseok Yang"
 ---
 
