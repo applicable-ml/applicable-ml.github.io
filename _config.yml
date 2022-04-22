@@ -60,7 +60,7 @@ algolia:
   search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
   powered_by             : # true (default), false
 google:
-  search_engine_id       : "99a8e67ea0d343dc2"
+  search_engine_id       : 99a8e67ea0d343dc2
   instant_search         : true
 # SEO Related
 google_site_verification :
@@ -85,10 +85,10 @@ social:
 
 # Analytics
 analytics:
-  provider               : "google" # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               : "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id          : "G-97JNB04QPX"
-    anonymize_ip         : # true, false (default)
+    anonymize_ip         : true # true, false (default)
 
 # Site Author
 author:
