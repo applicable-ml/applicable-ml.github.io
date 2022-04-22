@@ -1,20 +1,20 @@
 ---
 title: Core ML 기초
-tags: ['ios', 'ml', 'coreml']
+tags: ['ios', 'ml', 'coreml', 'vision', 'nlp']
 author: "Seonghun Kim"
 ---
 
 ## Intro
   현재 우리가 사용하는 대부분의 앱에서는 분야를 막론하고 머신러닝이 사용되고 있습니다. 오히려 머신러닝을 사용하지 않는 서비스를 찾기 힘들 정도죠. 앱에 머신러닝을 적용하는 방법은 여러 가지가 있습니다. 서버에 데이터를 전달하여 서버에서 머신러닝을 활용하여 원하는 결과를 가져오기도 하고 스마트폰 내에서 모델을 가지고 원하는 결과를 얻을 수도 있습니다.
 
-  이 글에서는 iOS 앱에서 On-device 머신러닝을 적용하는 방법의 하나인 Core ML에 대해 살펴보려고 합니다. Core ML의 기본적인 사용법부터 원격으로 모델을 전달받는 방법 등 처음 Core ML을 앱에 적용할 때 필요한 내용을 다루고 있습니다. Core ML로 앱에 새로운 기능을 제공하고 싶으신 분들에게 도움이 되길 바랍니다.
+  이 글에서는 iOS 앱에서 On-device 머신러닝을 적용하는 방법 중 하나인 Core ML에 대해 살펴보려고 합니다. 커스텀 머신러닝 모델을 사용할 수 있는 Core ML의 기본적인 사용법부터 원격으로 모델을 전달받는 방법 등 처음 Core ML을 앱에 적용할 때 필요한 내용을 다루고 있습니다. Core ML로 앱에 새로운 기능을 제공하고 싶으신 분들에게 도움이 되길 바랍니다.
 
 ## Core ML은 무엇인가?
   [Core ML](https://developer.apple.com/kr/machine-learning/core-ml/)은 머신러닝(Machine Learning)을 Apple platform에서 쉽게 사용할 수 있도록 돕는 프레임워크 입니다. 단지 Apple이 만든 Create ML로 학습한 모델 뿐만 아니라 다양한 도구로 학습한 머신러닝 모델들도 사용이 가능하도록 Core ML 모델로 변환하는 [converter](https://coremltools.readme.io/docs)도 함께 제공하고 있습니다.
 
   Core ML은 [Accelerate](https://developer.apple.com/documentation/accelerate)와 [Metal](https://developer.apple.com/documentation/metal/) framework 기반으로 제작되었으며, On-device 환경에 최적화하여 memory와 전력 사용량을 최소화 하였다고 합니다. 또한, On-device 환경에서 동작하기 때문에 Network 사용이 필요하지 않으며, 사용자 보안과 반응 속도에 도움이 된다고 Apple이 설명하고 있습니다. 
 
-  Apple은 Core ML과 더불어 Core ML기반의 4개의 머신러닝 framework를 제공하고 있습니다. 이 framework를 활용하면 학습된 모델이 없더라도 앱에서 머신러닝을 활용한 기능을 구현할 수 있습니다.
+  Apple은 Core ML과 더불어 Core ML기반의 4개의 domain-specific framework도 제공하고 있습니다. 이 framework를 활용하면 학습된 모델이 없더라도 앱에서 머신러닝을 활용한 기능을 구현할 수 있습니다.
 
   이 글에서는 모델의 학습 및 Core ML이 아닌 다른 모델을 Core ML 모델로 변환하는 내용은 포함하지 않습니다. Core ML 모델을 프로젝트에 어떻게 적용할 수 있을지 기본적인 사용법을 다룰 예정입니다.
 
